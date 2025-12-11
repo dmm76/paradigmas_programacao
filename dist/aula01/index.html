@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="pt-br"> <head><meta charset="UTF-8"><title>Revisão de Paradigmas</title><meta name="description" content><link rel="stylesheet" href="/style.css"></head> <body> <header class="site-header"> <div class="container header-inner"> <h1 class="logo">Revisão de Paradigmas</h1> <nav class="nav"> <a href="/">Início</a> <div class="nav-menu"> <button type="button" class="nav-menu-toggle">
+Aulas
+<span aria-hidden="true">▾</span> </button> <div class="nav-dropdown"> <a href="/aula01">Aula 01</a> <a href="/aula09">Aula 09</a> </div> </div> </nav> </div> </header> <main class="container main-content"> <h1 id="-aula-01--introdução-aos-paradigmas-de-programação">🌟 Aula 01 — Introdução aos Paradigmas de Programação</h1>
+<p><em>Versão especial no padrão neuro-otimizado da Aula 09 — focada em memorização acelerada.</em></p>
+<hr>
+<h2 id="-1-abertura-da-aula-o-clima-da-disciplina">🧠 1. Abertura da Aula (O Clima da Disciplina)</h2>
+<p>Nesta aula, o professor apresenta:</p>
+<ul>
+<li>A proposta da disciplina</li>
+<li>Como ela ajuda tanto quem programa quanto quem não programe</li>
+<li>O motivo de estudarmos <strong>paradigmas</strong>, e não apenas linguagens</li>
+</ul>
+<blockquote>
+<p><strong>Frase‑âncora:</strong> <em>“Não estudamos só <strong>como</strong> programar, mas <strong>por que</strong> programamos de cada jeito.”</em></p>
+</blockquote>
+<hr>
+<h2 id="-2-por-que-aprender-paradigmas">🟦 2. Por que aprender Paradigmas?</h2>
+<p>O professor destaca que:</p>
+<p>🔹 Paradigmas ampliam seu <strong>modo de pensar</strong><br>
+🔹 Permitem escolher melhor <strong>a ferramenta certa</strong><br>
+🔹 Reduzem erros comuns entre <strong>sintaxe</strong>, <strong>semântica</strong> e <strong>lógica</strong><br>
+🔹 Ajudam até quem não é desenvolvedor, pois tornam você capaz de <strong>conversar tecnicamente</strong> com equipes de software</p>
+<blockquote>
+<p><strong>Insight:</strong> paradigmas são <em>formas de pensar</em>, não linguagens.</p>
+</blockquote>
+<hr>
+<h2 id="-3-fundamentos-essenciais-de-linguagens">🧩 3. Fundamentos Essenciais de Linguagens</h2>
+<h3 id="-31-vocabulário">🔹 3.1 Vocabulário</h3>
+<p>As palavras reservadas: <code>if</code>, <code>while</code>, <code>for</code>, <code>class</code>, <code>return</code>…</p>
+<h3 id="-32-sintaxe">🔹 3.2 Sintaxe</h3>
+<p>As <strong>regras formais</strong> de como escrever corretamente.</p>
+<p>Exemplo:<br>
+✔️ <code>if (x > 10) { }</code><br>
+❌ <code>(if { ) }</code></p>
+<h3 id="-33-semântica">🔹 3.3 Semântica</h3>
+<p>O <strong>significado</strong> daquilo que foi escrito.</p>
+<blockquote>
+<p><strong>Gatilho mental:</strong> <em>Sintaxe é a forma. Semântica é o sentido.</em></p>
+</blockquote>
+<hr>
+<h2 id="-4-bnf--a-gramática-das-linguagens">📘 4. BNF — A Gramática das Linguagens</h2>
+<p>O professor introduz o conceito de <strong>BNF (Backus–Naur Form)</strong>:</p>
+<ul>
+<li>É uma <strong>metalinguagem</strong></li>
+<li>Usada para <strong>descrever formalmente</strong> a sintaxe de uma linguagem</li>
+<li>É a base de <strong>compiladores</strong>, <strong>interpretradores</strong> e <strong>analisadores sintáticos</strong></li>
+</ul>
+<p>Exemplo simplificado apresentado:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;program> ::= inicio &#x3C;stmt_list> fim</span></span>
+<span class="line"><span>&#x3C;stmt_list> ::= &#x3C;stmt> | &#x3C;stmt> &#x3C;stmt_list></span></span>
+<span class="line"><span>&#x3C;stmt> ::= &#x3C;var> "=" &#x3C;expr></span></span></code></pre>
+<blockquote>
+<p><strong>Frase-chave:</strong> BNF é o “esqueleto” que diz o que uma linguagem aceita.</p>
+</blockquote>
+<hr>
+<h2 id="-5-árvores-sintáticas-parse-trees">🌲 5. Árvores Sintáticas (Parse Trees)</h2>
+<p>O professor explica que compiladores constroem <strong>árvores sintáticas</strong> para representar a estrutura hierárquica do código.</p>
+<p>Exemplo:<br>
+<code>x = x + y</code></p>
+<p>A árvore mostra:</p>
+<ul>
+<li>o operador raiz (=)</li>
+<li>o lado esquerdo (variável x)</li>
+<li>o lado direito (expressão x + y)</li>
+</ul>
+<blockquote>
+<p><strong>Insight:</strong> árvores sintáticas revelam a <em>intenção estrutural</em> do código.</p>
+</blockquote>
+<hr>
+<h2 id="-6-paradigmas-de-programação--panorama-inicial">🔥 6. Paradigmas de Programação — Panorama Inicial</h2>
+<p>O professor introduz os quatro grandes grupos:</p>
+<h3 id="-61-paradigma-imperativo">🔹 6.1 Paradigma Imperativo</h3>
+<p>Diz <strong>como fazer</strong>.<br>
+Passo a passo, mudanças de estado, variáveis mutáveis.</p>
+<p>Exemplos: C, Basic.</p>
+<hr>
+<h3 id="-62-paradigma-estruturado">🔹 6.2 Paradigma Estruturado</h3>
+<p>Uma evolução do imperativo.<br>
+Entra o conceito de <strong>modularização</strong>: funções, procedimentos, escopos.</p>
+<blockquote>
+<p><strong>Frase-âncora:</strong> <em>Estruturado = partir um problema em blocos menores.</em></p>
+</blockquote>
+<hr>
+<h3 id="-63-paradigma-orientado-a-objetos-oo">🔹 6.3 Paradigma Orientado a Objetos (OO)</h3>
+<p>Outro derivado do imperativo.</p>
+<p>Traz:</p>
+<ul>
+<li>classes</li>
+<li>objetos</li>
+<li>atributos</li>
+<li>métodos</li>
+<li>herança</li>
+<li>polimorfismo</li>
+<li>encapsulamento</li>
+</ul>
+<p>OO modela <strong>entidades do mundo real</strong> e seus comportamentos.</p>
+<blockquote>
+<p><strong>Insight:</strong> funções isoladas viram <strong>comportamentos de objetos</strong>.</p>
+</blockquote>
+<hr>
+<h3 id="-64-paradigma-funcional">🔹 6.4 Paradigma Funcional</h3>
+<p>Focado no <strong>que calcular</strong>, não no como.<br>
+Traz conceitos como:</p>
+<ul>
+<li>funções puras</li>
+<li>imutabilidade</li>
+<li>ausência de efeitos colaterais</li>
+</ul>
+<p>Exemplos: Haskell, Scheme, partes do Python e Java moderno.</p>
+<blockquote>
+<p><strong>Frase-chave:</strong> <em>Funcional = transformação sem tocar no estado.</em></p>
+</blockquote>
+<hr>
+<h3 id="-65-paradigma-lógico">🔹 6.5 Paradigma Lógico</h3>
+<p>Baseado em fatos e regras.<br>
+O código responde perguntas (“queries”).</p>
+<p>Exemplo clássico: Prolog.</p>
+<hr>
+<h2 id="-7-precedência-associatividade-e-avaliação">💡 7. Precedência, Associatividade e Avaliação</h2>
+<p>O professor reforça que:</p>
+<ul>
+<li>operadores têm ordem própria</li>
+<li>a associatividade resolve empates</li>
+<li>parênteses evitam ambiguidades</li>
+<li>muitos bugs nascem aqui</li>
+</ul>
+<p>Exemplo:<br>
+<code>5 - 3 + 2</code> → avalia da esquerda para a direita.</p>
+<hr>
+<h2 id="-8-tipagem-conversões-e-cuidados">🔐 8. Tipagem, Conversões e Cuidados</h2>
+<p>O professor explica diferenças entre:</p>
+<ul>
+<li>tipagem forte vs fraca</li>
+<li>conversões explícitas vs implícitas</li>
+</ul>
+<p>E chama atenção para perda de dados:<br>
+<code>3.14 → 3</code></p>
+<blockquote>
+<p><strong>Gatilho mental:</strong> sempre valide antes de converter.</p>
+</blockquote>
+<hr>
+<h2 id="️-9-erros-comuns-de-iniciantes">🛠️ 9. Erros Comuns de Iniciantes</h2>
+<ul>
+<li>Achar que <strong>compilou</strong> = está correto</li>
+<li>Misturar sintaxe com semântica</li>
+<li>Confiar demais na conversão automática de tipos</li>
+<li>Não usar parênteses em expressões complexas</li>
+</ul>
+<hr>
+<h2 id="-10-fechamento-da-aula">🎓 10. Fechamento da Aula</h2>
+<p>O professor reforça:</p>
+<ul>
+<li>Paradigmas = modos de pensar</li>
+<li>Cada problema escolhe sua própria abordagem</li>
+<li>Não existe “a melhor linguagem”, e sim a melhor para cada contexto</li>
+<li>O objetivo é que você consiga <strong>raciocinar como um engenheiro de software</strong></li>
+</ul>
+<blockquote>
+<p><strong>Frase final da aula:</strong><br>
+<em>“Se ficarem dúvidas, perguntem. Se ninguém souber, pesquisamos juntos. E se ninguém achar… vocês acabaram de criar um novo paradigma.”</em></p>
+</blockquote>
+<hr>
+<p><em>Fim da Aula 01 — no padrão visual da Aula 09.</em></p> </main> <footer class="site-footer"> <div class="container"> <p>Projeto de estudo “Paradigmas de Programação”</p> </div> </footer> </body></html>

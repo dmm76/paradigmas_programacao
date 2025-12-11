@@ -1,0 +1,597 @@
+<!DOCTYPE html><html lang="pt-br"> <head><meta charset="UTF-8"><title>Revisão de Paradigmas</title><meta name="description" content><link rel="stylesheet" href="/style.css"></head> <body> <header class="site-header"> <div class="container header-inner"> <h1 class="logo">Revisão de Paradigmas</h1> <nav class="nav"> <a href="/">Início</a> <div class="nav-menu"> <button type="button" class="nav-menu-toggle">
+Aulas
+<span aria-hidden="true">▾</span> </button> <div class="nav-dropdown"> <a href="/aula01">Aula 01</a> <a href="/aula09">Aula 09</a> </div> </div> </nav> </div> </header> <main class="container main-content"> <h1 id="-aula-01--paradigmas-de-linguagens-de-programação-visão-geral">🌟 Aula 01 – Paradigmas de Linguagens de Programação (visão geral)</h1>
+<h3 id="versão-especial-para-memorização-eficiente-aprendizado-acelerado-e-prova"><em>Versão especial para memorização eficiente, aprendizado acelerado e prova.</em></h3>
+<blockquote>
+<p><strong>Frase‑âncora da aula:</strong><br>
+<em>“Paradigma é o <strong>jeito de pensar</strong> o problema. Linguagem é só a <strong>ferramenta</strong> para implementar esse jeito de pensar.”</em></p>
+</blockquote>
+<hr>
+<h2 id="1-abertura-da-disciplina">1. Abertura da disciplina</h2>
+<ul>
+<li>Disciplina: <strong>Paradigmas de Linguagens de Programação</strong></li>
+<li>Objetivo geral:
+<ul>
+<li>Ir <strong>além do “como programar”</strong> em uma linguagem específica</li>
+<li>Entender <strong>por que</strong> as linguagens são diferentes</li>
+<li>Desenvolver um <strong>arsenal mental</strong> de formas de pensar problemas</li>
+</ul>
+</li>
+<li>Mesmo quem <strong>não quer ser desenvolvedor full-time</strong> se beneficia:
+<ul>
+<li>Entender melhor o trabalho da equipe técnica</li>
+<li>Saber pedir o que precisa de forma clara</li>
+<li>Reconhecer limitações e pontos fortes das tecnologias</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Gatilho de memória:</strong> imagine que você é o “arquiteto” do sistema, não só o “pedreiro do código”.</p>
+</blockquote>
+<hr>
+<h2 id="2-por-que-não-focar-em-uma-única-linguagem">2. Por que não focar em uma única linguagem?</h2>
+<p>Muita gente pensa:</p>
+<blockquote>
+<p>“Por que não estudar só a linguagem mais popular do mercado e pronto?”</p>
+</blockquote>
+<p>Problema dessa visão:</p>
+<ul>
+<li>Você fica <strong>preso à moda</strong> do momento</li>
+<li>Cada novo problema complexo exige um jeito de pensar diferente</li>
+<li>Sem entender paradigmas, você:
+<ul>
+<li>Confunde <strong>sintaxe</strong> com <strong>semântica</strong></li>
+<li>Escolhe ferramenta pela <strong>popularidade</strong>, não pela <strong>adequação técnica</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="benefícios-de-estudar-paradigmas">Benefícios de estudar paradigmas</h3>
+<ul>
+<li>Aumenta sua <strong>capacidade de adaptação</strong></li>
+<li>Ajuda a <strong>reduzir bugs</strong> por confusão de significado</li>
+<li>Facilita migrar entre linguagens (Java → C# → Python → JavaScript etc.)</li>
+<li>Permite escolher <strong>“a linguagem certa para o problema certo”</strong></li>
+</ul>
+<blockquote>
+<p><strong>Frase‑âncora:</strong><br>
+<em>“Não existe linguagem perfeita, existe linguagem mais adequada para o problema.”</em></p>
+</blockquote>
+<hr>
+<h2 id="3-o-que-define-uma-linguagem-de-programação">3. O que define uma linguagem de programação?</h2>
+<p>Pense em uma linguagem de programação como um <strong>idioma</strong>:</p>
+<ol>
+<li>
+<p><strong>Vocabulário (tokens)</strong></p>
+<ul>
+<li>Palavras reservadas: <code>if</code>, <code>while</code>, <code>for</code>, <code>class</code>, <code>return</code>…</li>
+<li>Símbolos: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>=</code>, <code>==</code>, <code>{}</code>, <code>()</code>…</li>
+<li>Identificadores: nomes de variáveis, funções, classes etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>Sintaxe (gramática)</strong></p>
+<ul>
+<li>Como essas palavras podem ser <strong>combinadas corretamente</strong></li>
+<li>Exemplo:
+<ul>
+<li>Sintaticamente correto: <code>if (x > 10) { return x; }</code></li>
+<li>Sintaticamente errado: <code>if x > 10) { return x }</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Semântica (significado)</strong></p>
+<ul>
+<li>O que o código <strong>realmente faz</strong></li>
+<li>Um código pode:
+<ul>
+<li>Compilar = sintaxe correta</li>
+<li>Mas estar lógico/semanticamente errado</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="sintaxe--semântica">Sintaxe × Semântica</h3>
+<ul>
+<li><strong>Sintaxe:</strong> “frase bem escrita”</li>
+<li><strong>Semântica:</strong> “frase faz sentido?”</li>
+</ul>
+<p>Exemplo:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#F97583">int</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">int</span><span style="color:#E1E4E8"> y </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">int</span><span style="color:#E1E4E8"> z </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">/</span><span style="color:#E1E4E8"> y;</span><span style="color:#6A737D"> // Sintaxe correta, semântica problemática (divisão por zero)</span></span></code></pre>
+<blockquote>
+<p><strong>Frase‑âncora:</strong><br>
+<em>“O compilador cuida da sintaxe; <strong>você</strong> cuida da semântica.”</em></p>
+</blockquote>
+<hr>
+<h2 id="4-ortogonalidade--previsibilidade-da-linguagem">4. Ortogonalidade – previsibilidade da linguagem</h2>
+<p><strong>Ortogonalidade</strong> = quão <strong>coerente e previsível</strong> é a combinação dos recursos da linguagem.</p>
+<ul>
+<li>
+<p>Linguagem <strong>mais ortogonal</strong>:</p>
+<ul>
+<li>Poucas exceções</li>
+<li>Regras se combinam de forma previsível</li>
+<li>Mais fácil de aprender e usar</li>
+</ul>
+</li>
+<li>
+<p>Linguagem <strong>menos ortogonal</strong>:</p>
+<ul>
+<li>Muitos casos especiais</li>
+<li>“Aqui funciona, ali não”</li>
+<li>Mais fácil errar por detalhe</li>
+</ul>
+</li>
+</ul>
+<p>Exemplo clássico de redução de ortogonalidade:</p>
+<ul>
+<li>Operador <code>+</code> em algumas linguagens:
+<ul>
+<li>Com números: <strong>soma</strong></li>
+<li>Com strings: <strong>concatenação</strong></li>
+</ul>
+</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#79B8FF">1</span><span style="color:#F97583"> +</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// 2</span></span>
+<span class="line"><span style="color:#9ECBFF">"1"</span><span style="color:#F97583"> +</span><span style="color:#9ECBFF"> "1"</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// "11"</span></span></code></pre>
+<hr>
+<h2 id="5-gramática-formal-e-bnf-backusnaur-form">5. Gramática formal e BNF (Backus–Naur Form)</h2>
+<p>Para descrever a sintaxe de uma linguagem <strong>sem ambiguidade</strong>, usamos <strong>gramáticas formais</strong>.</p>
+<h3 id="o-que-é-bnf">O que é BNF?</h3>
+<ul>
+<li>É uma <strong>metalinguagem</strong>:
+<ul>
+<li>Uma linguagem usada para <strong>descrever outra linguagem</strong></li>
+</ul>
+</li>
+<li>Define:
+<ul>
+<li>Quais construções são válidas</li>
+<li>Como montar sentenças corretas</li>
+</ul>
+</li>
+</ul>
+<p>Metáfora visual:</p>
+<blockquote>
+<p>Pense no BNF como o <strong>manual de montagem LEGO da linguagem</strong>.<br>
+Ele não diz o que você vai construir (programa), mas <strong>como as peças se encaixam</strong>.</p>
+</blockquote>
+<h3 id="componentes-básicos-do-bnf">Componentes básicos do BNF</h3>
+<ul>
+<li><strong>Símbolos não terminais</strong>: são “conceitos” a serem detalhados
+<ul>
+<li>Ex.: <code>&#x3C;expressao></code>, <code>&#x3C;termo></code>, <code>&#x3C;fator></code>, <code>&#x3C;comando></code></li>
+</ul>
+</li>
+<li><strong>Símbolos terminais</strong>: são os tokens reais da linguagem
+<ul>
+<li>Ex.: <code>if</code>, <code>=</code>, <code>+</code>, <code>;</code>, identificadores</li>
+</ul>
+</li>
+<li><strong>Produções</strong>: regras que indicam como um não terminal se expande</li>
+</ul>
+<p>Exemplo simplificado:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;programa> ::= "inicio" &#x3C;lista-comandos> "fim"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;comando> ::= &#x3C;variavel> "=" &#x3C;expressao></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;expressao> ::= &#x3C;termo> | &#x3C;termo> "+" &#x3C;expressao></span></span></code></pre>
+<hr>
+<h2 id="6-árvore-sintática-parse-tree">6. Árvore sintática (parse tree)</h2>
+<p>A <strong>árvore sintática</strong> é uma representação visual de como o código foi interpretado pela gramática.</p>
+<p>Exemplo de código:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="txt"><code><span class="line"><span>x = x + y</span></span></code></pre>
+<p>Árvore sintática (visão mental):</p>
+<ul>
+<li>No topo: <code>&#x3C;comando-atribuicao></code></li>
+<li>Filhos:
+<ul>
+<li><code>&#x3C;variavel></code> → <code>x</code></li>
+<li><code>=</code></li>
+<li><code>&#x3C;expressao></code>:
+<ul>
+<li><code>&#x3C;variavel></code> → <code>x</code></li>
+<li><code>+</code></li>
+<li><code>&#x3C;variavel></code> → <code>y</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Uso prático:</strong><br>
+Compiladores usam árvores sintáticas para <strong>verificar</strong> e <strong>traduzir</strong> o código para máquina.</p>
+</blockquote>
+<hr>
+<h2 id="7-grandes-paradigmas-de-programação">7. Grandes paradigmas de programação</h2>
+<h3 id="71-paradigma-imperativo">7.1. Paradigma imperativo</h3>
+<ul>
+<li>Foco: <strong>“como fazer”</strong> (passo a passo)</li>
+<li>Você dá <strong>comandos diretos</strong> ao computador:
+<ul>
+<li>Atribuições</li>
+<li>Alteração de variáveis</li>
+<li>Controle de fluxo (<code>if</code>, <code>for</code>, <code>while</code>)</li>
+</ul>
+</li>
+</ul>
+<p>Características:</p>
+<ul>
+<li>Estado <strong>mutável</strong> (variáveis mudam de valor)</li>
+<li>Execução <strong>sequencial</strong> (linha a linha, salvo desvios de fluxo)</li>
+<li>Muito fácil de mapear em <strong>fluxogramas</strong> e <strong>pseudocódigo</strong></li>
+</ul>
+<p>Exemplos de linguagens com forte base imperativa:</p>
+<ul>
+<li>C, Pascal, BASIC, partes de Java, C#, PHP, JavaScript</li>
+</ul>
+<hr>
+<h3 id="72-programação-estruturada">7.2. Programação estruturada</h3>
+<p>Evolução do imperativo.</p>
+<ul>
+<li>Ideia central: <strong>organizar</strong> melhor o código.</li>
+<li>Ferramentas principais:
+<ul>
+<li><strong>Funções</strong> / procedimentos (sub-rotinas)</li>
+<li>Controle de fluxo estruturado (sem <code>goto</code> espalhado)</li>
+<li>Escopo de variáveis bem definido (local vs global)</li>
+</ul>
+</li>
+</ul>
+<p>Problema antigo:</p>
+<ul>
+<li>Código estilo “espaguete” com muitos <code>goto</code></li>
+<li>Difícil de entender e manter</li>
+</ul>
+<p>Solução:</p>
+<ul>
+<li><strong>Modularização</strong>:
+<ul>
+<li>Quebrar o problema em <strong>partes menores e reutilizáveis</strong></li>
+<li>Criar funções coerentes: cada uma faz <strong>uma coisa bem feita</strong></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Frase‑âncora:</strong><br>
+<em>“Programação estruturada é transformar um monstro de 1000 linhas em vários blocos de 20 linhas que fazem sentido.”</em></p>
+</blockquote>
+<hr>
+<h3 id="73-programação-orientada-a-objetos-poo">7.3. Programação Orientada a Objetos (POO)</h3>
+<p>Outra evolução do imperativo.</p>
+<ul>
+<li>Em vez de focar em funções soltas, focamos em <strong>objetos</strong>.</li>
+<li>Objeto = <strong>dados + comportamentos</strong> sobre esses dados.</li>
+</ul>
+<h4 id="componentes-principais">Componentes principais</h4>
+<ul>
+<li><strong>Classe</strong>: molde, “tipo” do objeto</li>
+<li><strong>Objeto</strong>: instância concreta da classe</li>
+<li><strong>Atributos</strong>: dados (estado)</li>
+<li><strong>Métodos</strong>: funções (comportamento)</li>
+</ul>
+<p>Exemplo mental:</p>
+<ul>
+<li>Classe <code>Pessoa</code>:
+<ul>
+<li>Atributos: <code>nome</code>, <code>cpf</code>, <code>dataNascimento</code></li>
+<li>Métodos: <code>validarCpf()</code>, <code>calcularIdade()</code></li>
+</ul>
+</li>
+</ul>
+<p>Pilares importantes:</p>
+<ol>
+<li>
+<p><strong>Encapsulamento</strong></p>
+<ul>
+<li>Esconder detalhes internos</li>
+<li>Expor apenas o que interessa (interface)</li>
+</ul>
+</li>
+<li>
+<p><strong>Herança</strong></p>
+<ul>
+<li>Uma classe “filha” reaproveita comportamento da “mãe”</li>
+<li>Ex.: <code>Funcionario</code> herda de <code>Pessoa</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Polimorfismo</strong></p>
+<ul>
+<li>Objetos diferentes podem <strong>responder de maneiras diferentes</strong> à mesma mensagem</li>
+<li>Ex.: <code>pagarSalario()</code> faz coisas diferentes em <code>FuncionarioCLT</code> e <code>FuncionarioPJ</code></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p><strong>Frase‑âncora:</strong><br>
+<em>“Na POO, o comportamento certo <strong>mora dentro do objeto certo</strong>.”</em></p>
+</blockquote>
+<hr>
+<h3 id="74-paradigma-funcional">7.4. Paradigma funcional</h3>
+<p>Muda a forma de pensar:</p>
+<ul>
+<li>Menos “como fazer passo a passo”</li>
+<li>Mais “<strong>o que calcular</strong>”</li>
+</ul>
+<p>Conceitos centrais:</p>
+<ol>
+<li>
+<p><strong>Funções puras</strong></p>
+<ul>
+<li>Mesma entrada → mesma saída</li>
+<li>Sem efeitos colaterais (não mexem em variáveis globais etc.)</li>
+</ul>
+</li>
+<li>
+<p><strong>Imutabilidade</strong></p>
+<ul>
+<li>Dados não são alterados, são <strong>copiados com mudanças</strong></li>
+<li>Em vez de “atualizar” um objeto, cria-se um <strong>novo</strong> com estado atualizado</li>
+</ul>
+</li>
+</ol>
+<p>Vantagens:</p>
+<ul>
+<li>Menos bugs de “estado inesperado”</li>
+<li>Fácil de raciocinar em ambientes concorrentes/assíncronos</li>
+<li>Ótimo para processamento de dados, coleções, pipelines (<code>map</code>, <code>filter</code>, <code>reduce</code>)</li>
+</ul>
+<p>Exemplos:</p>
+<ul>
+<li>Haskell, Scheme</li>
+<li>Traços funcionais em: Java (streams, lambdas), JavaScript, Python, C#, etc.</li>
+</ul>
+<hr>
+<h3 id="75-paradigma-lógico">7.5. Paradigma lógico</h3>
+<ul>
+<li>Baseado em <strong>lógica formal</strong></li>
+<li>Em vez de comandos, você descreve:
+<ul>
+<li><strong>Fatos</strong></li>
+<li><strong>Regras</strong></li>
+</ul>
+</li>
+<li>O sistema tenta <strong>inferir</strong> respostas com base nesses fatos e regras.</li>
+</ul>
+<p>Exemplo de pergunta (query):</p>
+<blockquote>
+<p>“Dadas essas regras, é verdade que X é pai de Y?”</p>
+</blockquote>
+<p>Linguagem clássica:</p>
+<ul>
+<li><strong>Prolog</strong></li>
+</ul>
+<p>Usado em:</p>
+<ul>
+<li>Sistemas especialistas</li>
+<li>Inteligência artificial clássica</li>
+<li>Motores de inferência</li>
+</ul>
+<hr>
+<h3 id="76-declarativo--procedural-imperativo">7.6. Declarativo × Procedural (imperativo)</h3>
+<ul>
+<li>
+<p><strong>Declarativo</strong>:</p>
+<ul>
+<li>Você diz <strong>o que</strong> quer</li>
+<li>O sistema decide <strong>como</strong> chegar lá</li>
+<li>Exemplos: SQL, Prolog, partes de linguagens funcionais</li>
+</ul>
+</li>
+<li>
+<p><strong>Procedural/imperativo</strong>:</p>
+<ul>
+<li>Você diz <strong>passo a passo</strong> como fazer</li>
+<li>Ex.: C, muitos códigos em Java, PHP, etc.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Mapa mental rápido:</strong></p>
+<ul>
+<li><strong>Declarativo</strong> → “Eu quero esse resultado.”</li>
+<li><strong>Imperativo</strong> → “Faça isso, depois isso, depois aquilo…”</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="8-operadores-precedência-e-associatividade">8. Operadores, precedência e associatividade</h2>
+<h3 id="precedência">Precedência</h3>
+<p>Define <strong>quem vem primeiro</strong> em uma expressão.</p>
+<p>Exemplo:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="txt"><code><span class="line"><span>5 - 3 + 2</span></span></code></pre>
+<p>Sem parênteses, a linguagem segue uma ordem:</p>
+<ul>
+<li>Multiplicação e divisão antes de soma e subtração</li>
+<li>Em lógicas: relacionais antes de <code>&#x26;&#x26;</code>, <code>||</code>, etc.</li>
+</ul>
+<h3 id="associatividade">Associatividade</h3>
+<p>Quando operadores têm <strong>mesma precedência</strong>, a associatividade decide a direção:</p>
+<ul>
+<li>Da esquerda para a direita
+<ul>
+<li>Comum em <code>+</code>, <code>-</code></li>
+</ul>
+</li>
+<li>Da direita para a esquerda
+<ul>
+<li>Comum em atribuição em algumas linguagens</li>
+</ul>
+</li>
+</ul>
+<p>Exemplo:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="txt"><code><span class="line"><span>5 - 3 + 2  →  (5 - 3) + 2 = 4</span></span></code></pre>
+<blockquote>
+<p><strong>Boa prática:</strong><br>
+<em>Na dúvida, use <strong>parênteses</strong>. Código legível > código “esperto”.</em></p>
+</blockquote>
+<hr>
+<h2 id="9-tipagem-e-conversões">9. Tipagem e conversões</h2>
+<h3 id="tipagem-forte-vs-fraca">Tipagem forte vs fraca</h3>
+<ul>
+<li>
+<p><strong>Fortemente tipadas</strong> (ex.: Java, C#, C em boa parte):</p>
+<ul>
+<li>Conversões costumam ser <strong>explícitas</strong></li>
+<li>O compilador reclama se algo estiver estranho</li>
+</ul>
+</li>
+<li>
+<p><strong>Fracamente tipadas</strong> (ex.: JavaScript, PHP):</p>
+<ul>
+<li>Fazem muitas conversões <strong>automáticas</strong></li>
+<li>Fáceis para começar, mas perigosas em sistemas grandes</li>
+</ul>
+</li>
+</ul>
+<h3 id="riscos-comuns">Riscos comuns</h3>
+<ul>
+<li>Perda de precisão (ex.: <code>3.14</code> → <code>3</code>)</li>
+<li>Conversão de string inválida para número</li>
+<li>Comparações ambíguas (<code>"10" == 10</code> em JS, por exemplo)</li>
+</ul>
+<blockquote>
+<p><strong>Frase‑âncora:</strong><br>
+<em>“O tipo certo, no lugar certo, evita bug chato e difícil de achar.”</em></p>
+</blockquote>
+<hr>
+<h2 id="10-linguagens-multiparadigma">10. Linguagens multiparadigma</h2>
+<p>Hoje, a maioria das linguagens populares é <strong>multiparadigma</strong>:</p>
+<ul>
+<li>Java, C#, Python, JavaScript, Kotlin, etc.</li>
+<li>Suportam:
+<ul>
+<li>Estilo imperativo</li>
+<li>Estruturado</li>
+<li>Orientado a objetos</li>
+<li>Traços funcionais (lambdas, streams, map/filter/reduce)</li>
+</ul>
+</li>
+</ul>
+<p>Isso é poderoso, mas:</p>
+<ul>
+<li><strong>Não</strong> significa que você deve misturar tudo o tempo todo</li>
+<li>Precisa de <strong>critério</strong> para escolher o estilo adequado a cada problema</li>
+</ul>
+<hr>
+<h2 id="11-como-escolher-paradigmalinguagem">11. Como escolher paradigma/linguagem?</h2>
+<p>Use este mini-checklist mental:</p>
+<ol>
+<li>
+<p><strong>Problema baseado em regras, fatos, inferência?</strong></p>
+<ul>
+<li>Paradigma lógico / declarativo</li>
+</ul>
+</li>
+<li>
+<p><strong>Muita transformação de dados, pouca dependência de estado?</strong></p>
+<ul>
+<li>Paradigma funcional</li>
+</ul>
+</li>
+<li>
+<p><strong>Domínio rico em entidades do mundo real (pessoas, pedidos, contas, produtos)?</strong></p>
+<ul>
+<li>Programação orientada a objetos</li>
+</ul>
+</li>
+<li>
+<p><strong>Problema exige controle fino de passo a passo e estado?</strong></p>
+<ul>
+<li>Paradigma imperativo / estruturado</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p><strong>Regra de ouro:</strong><br>
+<em>“Especialize-se em uma linguagem, mas <strong>não feche os olhos</strong> para outras formas de pensar.”</em></p>
+</blockquote>
+<hr>
+<h2 id="12-erros-conceituais-comuns-para-não-cair-neles">12. Erros conceituais comuns (para não cair neles)</h2>
+<ol>
+<li>
+<p><strong>“Se compilou, tá certo.”</strong></p>
+<ul>
+<li>Não! Compilar só garante sintaxe válida.</li>
+<li>Erros lógicos/semânticos continuam lá.</li>
+</ul>
+</li>
+<li>
+<p><strong>Omitir parênteses em expressões complexas</strong></p>
+<ul>
+<li>Pode mudar o resultado sem você perceber.</li>
+</ul>
+</li>
+<li>
+<p><strong>Assumir que <code>+</code> sempre soma números</strong></p>
+<ul>
+<li>Em linguagens com concatenação, pode produzir resultados estranhos.</li>
+</ul>
+</li>
+<li>
+<p><strong>Ignorar escopo de variáveis</strong></p>
+<ul>
+<li>Variáveis globais demais → bugs difíceis de rastrear.</li>
+</ul>
+</li>
+<li>
+<p><strong>Misturar paradigmas sem critério</strong></p>
+<ul>
+<li>Código vira um Frankenstein difícil de manter.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="13-resumo-relâmpago-da-aula">13. Resumo relâmpago da aula</h2>
+<ul>
+<li>Linguagem = vocabulário + sintaxe + semântica + regras de uso</li>
+<li>Paradigma = <strong>modo de pensar</strong> e organizar soluções</li>
+<li>Imperativo: foco no <strong>como fazer</strong></li>
+<li>Estruturado: organização em <strong>funções e blocos claros</strong></li>
+<li>POO: foco em <strong>objetos, atributos e métodos</strong></li>
+<li>Funcional: foco em <strong>funções puras e imutabilidade</strong></li>
+<li>Lógico: foco em <strong>regras e inferências</strong></li>
+<li>Declarativo × Procedural: <strong>o quê</strong> vs <strong>como</strong></li>
+<li>BNF: gramática formal → base de compiladores</li>
+<li>Ortogonalidade: linguagem previsível, com poucas exceções</li>
+</ul>
+<hr>
+<h2 id="14-como-revisar-essa-aula-usando-memorização-ativa">14. Como revisar essa aula usando memorização ativa</h2>
+<h3 id="passo-1--revisão-rápida-em-510-minutos">Passo 1 – Revisão rápida (em 5–10 minutos)</h3>
+<ul>
+<li>Leia apenas:
+<ul>
+<li>Títulos das seções</li>
+<li>Frases‑âncora em destaque</li>
+<li>Listas principais</li>
+</ul>
+</li>
+</ul>
+<h3 id="passo-2--active-recall-sem-olhar-o-material">Passo 2 – Active Recall (sem olhar o material)</h3>
+<p>Feche o arquivo e tente responder de cabeça:</p>
+<ol>
+<li>O que é <strong>sintaxe</strong>? O que é <strong>semântica</strong>?</li>
+<li>Diferença entre imperativo, POO, funcional e lógico.</li>
+<li>O que é <strong>função pura</strong>? O que é <strong>imutabilidade</strong>?</li>
+<li>O que é <strong>BNF</strong> e para que serve?</li>
+<li>Exemplos de situações onde POO é melhor; outras onde funcional é melhor.</li>
+</ol>
+<p>Depois, confira no material onde acertou e onde confundiu.</p>
+<h3 id="passo-3--repetição-espaçada">Passo 3 – Repetição espaçada</h3>
+<ul>
+<li>Dia 1: leia a aula completa</li>
+<li>Dia 2: faça apenas o <strong>resumo relâmpago</strong></li>
+<li>Dia 4: refaça o <strong>Active Recall</strong></li>
+<li>Dia 7: explique o conteúdo para alguém (ou em voz alta para você mesmo)</li>
+</ul>
+<blockquote>
+<p><strong>Dica final:</strong><br>
+<em>“Você realmente aprende quando consegue <strong>explicar com suas próprias palavras</strong>.”</em></p>
+</blockquote>
+<hr>
+<p><strong>Fim da Aula 01 – Paradigmas de Linguagens de Programação (Visão Geral)</strong><br>
+Use esta aula como <strong>mapa geral</strong>; as próximas mergulham fundo em cada paradigma.</p> </main> <footer class="site-footer"> <div class="container"> <p>Projeto de estudo “Paradigmas de Programação”</p> </div> </footer> </body></html>
