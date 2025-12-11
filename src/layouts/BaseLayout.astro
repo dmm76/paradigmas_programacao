@@ -1,0 +1,42 @@
+---
+const { title = "Revisão de Paradigmas", description = "" } = Astro.props;
+---
+
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <h1 class="logo">Revisão de Paradigmas</h1>
+        <nav class="nav">
+          <a href="/">Início</a>
+          <div class="nav-menu">
+            <button type="button" class="nav-menu-toggle">
+              Aulas
+              <span aria-hidden="true">▾</span>
+            </button>
+            <div class="nav-dropdown">
+              <a href="/aula01">Aula 01</a>
+              <a href="/aula09">Aula 09</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main-content">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Projeto de estudo “Paradigmas de Programação”</p>
+      </div>
+    </footer>
+  </body>
+</html>
