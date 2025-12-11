@@ -55,6 +55,22 @@ O resultado deve parecer uma aula premium, revisada por um professor especialist
 
 Evite blocos gigantes de texto — priorize clareza e ritmo
 
+use os sequintes icones para melhorar a identificacao
+
+🌟
+
+🧠
+
+🟦
+
+🔹
+
+✦
+
+etc.
+
 Reescreva o conteúdo a seguir conforme essas regras:
 
 [COLE AQUI O CONTEÚDO QUE QUER REFORMULAR]
+
+me retorne o conteu como aula0x.md para baixar
