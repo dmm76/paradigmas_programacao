@@ -2,4 +2,7 @@
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  // Adicione isso se o seu URL for dmm76.github.io
+  base: "/paradigmas_programacao",
+});
