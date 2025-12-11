@@ -1,15 +1,13 @@
 ---
 layout: ../layouts/BaseLayout.astro
-title: "Aula 01 – Paradigmas de Linguagens de Programação (visão geral)"
-description: "Resumo otimizado com técnicas de neuroaprendizagem para facilitar memorização."
+title: "Aula 01 – Paradigmas de Linguagens de Programação"
+description: "Revisão estruturada da aula 01 de Paradigmas de Linguagens de Programação: vocabulário, sintaxe, semântica, gramática formal (BNF), paradigmas imperativo, estruturado, orientado a objetos, funcional e lógico."
 pubDate: "2025-12-11"
 ---
 
-# 🌟 Aula 01 – Paradigmas de Linguagens de Programação (visão geral)
+# Aula 01 – Paradigmas de Linguagens de Programação (Visão Geral)
 
-### _Versão especial para memorização eficiente, aprendizado acelerado e prova._
-
-> **Frase‑âncora da aula:**  
+> **Frase-âncora da aula:**  
 > _“Paradigma é o **jeito de pensar** o problema. Linguagem é só a **ferramenta** para implementar esse jeito de pensar.”_
 
 ---
@@ -22,340 +20,316 @@ pubDate: "2025-12-11"
   - Entender **por que** as linguagens são diferentes
   - Desenvolver um **arsenal mental** de formas de pensar problemas
 - Mesmo quem **não quer ser desenvolvedor full-time** se beneficia:
-  - Entender melhor o trabalho da equipe técnica
-  - Saber pedir o que precisa de forma clara
-  - Reconhecer limitações e pontos fortes das tecnologias
-
-> **Gatilho de memória:** imagine que você é o “arquiteto” do sistema, não só o “pedreiro do código”.
+  - Entender melhor o que pedir de um time técnico
+  - Saber escolher tecnologias com **critério técnico**, não só por modinha
 
 ---
 
-## 2. Por que não focar em uma única linguagem?
+## 2. Por que estudar paradigmas em vez de focar só em uma linguagem?
 
 Muita gente pensa:
 
-> “Por que não estudar só a linguagem mais popular do mercado e pronto?”
+> “Por que não focar só em *uma linguagem* (a mais popular ou a que o mercado está pedindo) e pronto?”
 
-Problema dessa visão:
+O professor responde com duas ideias principais:
 
-- Você fica **preso à moda** do momento
-- Cada novo problema complexo exige um jeito de pensar diferente
-- Sem entender paradigmas, você:
-  - Confunde **sintaxe** com **semântica**
-  - Escolhe ferramenta pela **popularidade**, não pela **adequação técnica**
+1. **Profundidade e adaptação**
+   - Estudar **paradigmas** (jeitos de pensar) aumenta sua capacidade de:
+     - Resolver problemas de formas diferentes
+     - Se adaptar a novas linguagens com mais facilidade
+2. **Escolha consciente de ferramentas**
+   - Em vez de “Java porque é o que todo mundo usa”, pensar:
+     - Que tipo de problema eu tenho?
+     - Qual paradigma atende melhor?
+     - Qual linguagem implementa bem esse paradigma?
 
-### Benefícios de estudar paradigmas
-
-- Aumenta sua **capacidade de adaptação**
-- Ajuda a **reduzir bugs** por confusão de significado
-- Facilita migrar entre linguagens (Java → C# → Python → JavaScript etc.)
-- Permite escolher **“a linguagem certa para o problema certo”**
-
-> **Frase‑âncora:**  
-> _“Não existe linguagem perfeita, existe linguagem mais adequada para o problema.”_
+> 💡 **Insight:**  
+> “A melhor linguagem é a que **melhor resolve o problema** que você tem na mão, não a que está mais na moda.”
 
 ---
 
 ## 3. O que define uma linguagem de programação?
 
-Pense em uma linguagem de programação como um **idioma**:
+Uma linguagem de programação pode ser vista como um **idioma**, com:
 
 1. **Vocabulário (tokens)**
-
-   - Palavras reservadas: `if`, `while`, `for`, `class`, `return`…
-   - Símbolos: `+`, `-`, `*`, `/`, `=`, `==`, `{}`, `()`…
-   - Identificadores: nomes de variáveis, funções, classes etc.
+   - Símbolos, palavras reservadas, operadores
+   - Exemplos:
+     - `if`, `while`, `for`
+     - `+`, `-`, `=`, `==`
 
 2. **Sintaxe (gramática)**
-
-   - Como essas palavras podem ser **combinadas corretamente**
-   - Exemplo:
-     - Sintaticamente correto: `if (x > 10) { return x; }`
-     - Sintaticamente errado: `if x > 10) { return x }`
+   - **Como escrever** corretamente
+   - Regras de formatação e estrutura
+   - Erro de sintaxe = erro de gramática → o compilador reclama
 
 3. **Semântica (significado)**
-   - O que o código **realmente faz**
-   - Um código pode:
-     - Compilar = sintaxe correta
-     - Mas estar lógico/semanticamente errado
+   - **O que o código quer dizer / faz de verdade**
+   - Um programa pode:
+     - Compilar sem erros (sintaxe correta)
+     - Mas ainda assim estar **semânticamente errado** (lógica errada)
 
-### Sintaxe × Semântica
-
-- **Sintaxe:** “frase bem escrita”
-- **Semântica:** “frase faz sentido?”
-
-Exemplo:
-
-```c
-int x = 10;
-int y = 0;
-int z = x / y; // Sintaxe correta, semântica problemática (divisão por zero)
-```
-
-> **Frase‑âncora:**  
-> _“O compilador cuida da sintaxe; **você** cuida da semântica.”_
+4. **Ortogonalidade**
+   - Medida de **consistência** da linguagem
+   - Quanto **menos exceções e regras especiais**, mais previsível e simples de aprender
+   - Linguagem pouco ortogonal:
+     - Vários casos especiais
+     - Mesmo recurso se comporta de jeitos diferentes dependendo do contexto
+   - Linguagem mais ortogonal:
+     - Combinar recursos é mais previsível
+     - Menos “pegadinhas” de linguagem
 
 ---
 
-## 4. Ortogonalidade – previsibilidade da linguagem
+## 4. Sintaxe x Semântica – por que isso cai tanto em prova e dá tanto bug?
 
-**Ortogonalidade** = quão **coerente e previsível** é a combinação dos recursos da linguagem.
+### 4.1 Sintaxe
 
-- Linguagem **mais ortogonal**:
+- Sintaxe = **como escrever**
+- Exemplo de erro de sintaxe:
+  - Esquecer `;`
+  - Deixar parêntese ou chave sem fechar
+- O compilador costuma acusar rápido:
+  - “Unexpected token”
+  - “Missing `;`”
+  - Etc.
 
-  - Poucas exceções
-  - Regras se combinam de forma previsível
-  - Mais fácil de aprender e usar
+**Analogia com português:**
 
-- Linguagem **menos ortogonal**:
-  - Muitos casos especiais
-  - “Aqui funciona, ali não”
-  - Mais fácil errar por detalhe
+- Frase sintaticamente errada:
+  - “Eu ir no mercado ontem”
+- O sentido é até compreensível, mas a **gramática está errada**
 
-Exemplo clássico de redução de ortogonalidade:
+### 4.2 Semântica
 
-- Operador `+` em algumas linguagens:
-  - Com números: **soma**
-  - Com strings: **concatenação**
+- Semântica = **o que o código significa / faz**
+- Exemplo de erro semântico:
+  - Usar `+` quando queria `-`
+  - Fazer uma condição que **nunca** será verdadeira
+  - Inverter `<` por `>` em uma comparação
+- O compilador **não vê** a intenção, só vê se é válido sintaticamente
 
-```js
-1 + 1; // 2
-"1" + "1"; // "11"
-```
+> ⚠️ **Perigo:**  
+> Erros semânticos não impedem o código de compilar, mas podem **quebrar o negócio** em produção.
 
 ---
 
-## 5. Gramática formal e BNF (Backus–Naur Form)
+## 5. Gramática formal (BNF) e árvore sintática
 
 Para descrever a sintaxe de uma linguagem **sem ambiguidade**, usamos **gramáticas formais**.
 
-### O que é BNF?
+### 5.1 O que é BNF?
 
+- BNF = **Backus–Naur Form**
 - É uma **metalinguagem**:
   - Uma linguagem usada para **descrever outra linguagem**
-- Define:
-  - Quais construções são válidas
-  - Como montar sentenças corretas
+- Serve para:
+  - Definir todas as regras sintáticas de uma linguagem
+  - Ser base para **compiladores** e **interpretadores**
 
-Metáfora visual:
+### 5.2 Componentes básicos da BNF
 
-> Pense no BNF como o **manual de montagem LEGO da linguagem**.  
-> Ele não diz o que você vai construir (programa), mas **como as peças se encaixam**.
+- **Símbolos não terminais**:
+  - Representam partes abstratas da linguagem
+  - Geralmente escritos entre `<>`, por exemplo:
+    - `<expr>`, `<var>`, `<stmt>`
+- **Produções (regras)**:
+  - Definem como um símbolo não terminal pode ser formado
+  - Exemplo (forma genérica):
+    ```bnf
+    <assign> ::= <var> "=" <expr>
+    ```
+- **Símbolo inicial**:
+  - Ponto de partida da gramática
+  - Ex.: `<program>`
 
-### Componentes básicos do BNF
+### 5.3 Árvores sintáticas
 
-- **Símbolos não terminais**: são “conceitos” a serem detalhados
-  - Ex.: `<expressao>`, `<termo>`, `<fator>`, `<comando>`
-- **Símbolos terminais**: são os tokens reais da linguagem
-  - Ex.: `if`, `=`, `+`, `;`, identificadores
-- **Produções**: regras que indicam como um não terminal se expande
+- Dada uma gramática em BNF, podemos construir uma **árvore sintática** para um comando concreto
+- Ela mostra:
+  - Como uma instrução é derivada da gramática
+  - A estrutura **hierárquica** do código (do geral → para o específico)
 
-Exemplo simplificado:
-
-```bnf
-<programa> ::= "inicio" <lista-comandos> "fim"
-
-<comando> ::= <variavel> "=" <expressao>
-
-<expressao> ::= <termo> | <termo> "+" <expressao>
-```
-
----
-
-## 6. Árvore sintática (parse tree)
-
-A **árvore sintática** é uma representação visual de como o código foi interpretado pela gramática.
-
-Exemplo de código:
+Exemplo conceitual para:
 
 ```txt
 x = x + y
 ```
 
-Árvore sintática (visão mental):
-
-- No topo: `<comando-atribuicao>`
-- Filhos:
-  - `<variavel>` → `x`
-  - `=`
-  - `<expressao>`:
-    - `<variavel>` → `x`
-    - `+`
-    - `<variavel>` → `y`
-
-> **Uso prático:**  
-> Compiladores usam árvores sintáticas para **verificar** e **traduzir** o código para máquina.
+- No topo: um nó que representa **atribuição**
+- Nos ramos:
+  - Nó para a variável `x` (lado esquerdo)
+  - Nó para a expressão `x + y` (lado direito)
+- Isso ajuda:
+  - Compiladores a gerarem código
+  - A gente a entender **ordem de avaliação**, precedência etc.
 
 ---
 
-## 7. Grandes paradigmas de programação
+## 6. Visão geral dos paradigmas de programação
 
-### 7.1. Paradigma imperativo
+O professor apresenta primeiro uma **separação macro**:
 
-- Foco: **“como fazer”** (passo a passo)
-- Você dá **comandos diretos** ao computador:
-  - Atribuições
-  - Alteração de variáveis
-  - Controle de fluxo (`if`, `for`, `while`)
+- Paradigmas que tendem ao **procedural / imperativo**
+- Paradigmas que tendem ao **declarativo**
 
-Características:
+Depois entra nos principais:
 
-- Estado **mutável** (variáveis mudam de valor)
-- Execução **sequencial** (linha a linha, salvo desvios de fluxo)
-- Muito fácil de mapear em **fluxogramas** e **pseudocódigo**
+1. **Imperativo**
+2. **Estruturado**
+3. **Orientado a Objetos (OO)**
+4. **Funcional**
+5. **Lógico**
 
-Exemplos de linguagens com forte base imperativa:
+### 6.1 Paradigma imperativo
 
-- C, Pascal, BASIC, partes de Java, C#, PHP, JavaScript
+- Essência:
+  - Dar **comandos diretos** ao computador, passo a passo
+- Foco:
+  - **Comandos** e **estado mutável**
+  - Variáveis mudam de valor ao longo da execução
+- Fluxo típico:
+  - Sequência de instruções
+  - Desvios (`if`)
+  - Laços (`for`, `while`)
+- Exemplos de linguagens:
+  - C, BASIC, Pascal (e muitas outras)
 
----
+**Analogia visual:**
 
-### 7.2. Programação estruturada
+- É fácil desenhar um programa imperativo como um **fluxograma**:
+  - Começo → decisões → laços → fim
 
-Evolução do imperativo.
+### 6.2 Programação estruturada (dentro do imperativo)
 
-- Ideia central: **organizar** melhor o código.
-- Ferramentas principais:
-  - **Funções** / procedimentos (sub-rotinas)
-  - Controle de fluxo estruturado (sem `goto` espalhado)
-  - Escopo de variáveis bem definido (local vs global)
+- Surge como uma **evolução** do paradigma imperativo
+- Ideia central:
+  - Organizar o código em partes menores:
+    - **Funções**
+    - **Procedures**
+  - Reaproveitar código
+  - Melhorar legibilidade e manutenção
 
-Problema antigo:
+Antes: muito uso de `GOTO` (principalmente em linguagens antigas como COBOL, Clipper etc.)
 
-- Código estilo “espaguete” com muitos `goto`
-- Difícil de entender e manter
+Depois:
+- Divisão em **sub-rotinas**
+- Conceitos de:
+  - Variáveis **globais** x **locais**
+  - Escopo
+  - Passagem de parâmetros
 
-Solução:
+> 💡 **Resumo:**  
+> Programação estruturada ainda é imperativa, mas com **organização e modularização**.
 
-- **Modularização**:
-  - Quebrar o problema em **partes menores e reutilizáveis**
-  - Criar funções coerentes: cada uma faz **uma coisa bem feita**
+### 6.3 Programação Orientada a Objetos (OO)
 
-> **Frase‑âncora:**  
-> _“Programação estruturada é transformar um monstro de 1000 linhas em vários blocos de 20 linhas que fazem sentido.”_
+- Também uma **evolução** do paradigma imperativo
+- Muda o foco:
+  - De **procedimentos isolados** → para **objetos**
+- Objeto:
+  - Abstração de algo do **mundo real**
+  - Junta:
+    - **Dados** (atributos)
+    - **Comportamentos** (métodos)
 
----
-
-### 7.3. Programação Orientada a Objetos (POO)
-
-Outra evolução do imperativo.
-
-- Em vez de focar em funções soltas, focamos em **objetos**.
-- Objeto = **dados + comportamentos** sobre esses dados.
-
-#### Componentes principais
-
-- **Classe**: molde, “tipo” do objeto
-- **Objeto**: instância concreta da classe
-- **Atributos**: dados (estado)
-- **Métodos**: funções (comportamento)
-
-Exemplo mental:
-
-- Classe `Pessoa`:
+Exemplo:
+- Classe `Pessoa`
   - Atributos: `nome`, `cpf`, `dataNascimento`
-  - Métodos: `validarCpf()`, `calcularIdade()`
+  - Métodos: `validarDataNascimento()`, `calcularIdade()`
 
-Pilares importantes:
+#### Conceitos centrais de OO
 
-1. **Encapsulamento**
+- **Classe**: “molde” para criar objetos
+- **Objeto**: instância de uma classe
+- **Atributos**: dados do objeto
+- **Métodos**: comportamentos do objeto
+- **Encapsulamento**: esconder detalhes internos (visibilidade)
+- **Herança**: reuso de comportamentos de uma classe base
+- **Polimorfismo**: objetos diferentes se comportam de forma diferente usando a mesma “interface” de métodos
 
-   - Esconder detalhes internos
-   - Expor apenas o que interessa (interface)
+> ⚠️ Importante:  
+> OO **não substitui** o imperativo; ela se apoia nele.  
+> Dentro de um método, ainda escrevemos **if, for, while** de forma sequencial.
 
-2. **Herança**
+### 6.4 Paradigma funcional
 
-   - Uma classe “filha” reaproveita comportamento da “mãe”
-   - Ex.: `Funcionario` herda de `Pessoa`
+- Muda o foco do “como” para o **“o que calcular”**
+- Programa visto como **composição de funções matemáticas puras**
+- Conceitos-chave:
+  1. **Funções puras**
+     - Mesma entrada → mesma saída
+     - Sem efeitos colaterais (não mexem em variáveis globais, não alteram estado externo)
+  2. **Imutabilidade**
+     - Dados não são modificados
+     - Em vez de “mudar um objeto”, criamos **uma nova versão** com o valor atualizado
 
-3. **Polimorfismo**
-   - Objetos diferentes podem **responder de maneiras diferentes** à mesma mensagem
-   - Ex.: `pagarSalario()` faz coisas diferentes em `FuncionarioCLT` e `FuncionarioPJ`
+- Linguagens clássicas:
+  - Haskell, Scheme
+- Linguagens multiparadigma com recursos funcionais:
+  - Python, Java (streams, lambdas), JavaScript, etc.
 
-> **Frase‑âncora:**  
-> _“Na POO, o comportamento certo **mora dentro do objeto certo**.”_
+### 6.5 Paradigma lógico
 
----
+- É um paradigma **declarativo**
+- Baseado em:
+  - **Lógica formal**
+  - Fatos
+  - Regras
+- Em vez de escrever passo a passo, você escreve:
+  - **O que é verdade** no seu domínio
+  - O programa responde a perguntas (**queries**) com base nisso
 
-### 7.4. Paradigma funcional
-
-Muda a forma de pensar:
-
-- Menos “como fazer passo a passo”
-- Mais “**o que calcular**”
-
-Conceitos centrais:
-
-1. **Funções puras**
-
-   - Mesma entrada → mesma saída
-   - Sem efeitos colaterais (não mexem em variáveis globais etc.)
-
-2. **Imutabilidade**
-   - Dados não são alterados, são **copiados com mudanças**
-   - Em vez de “atualizar” um objeto, cria-se um **novo** com estado atualizado
-
-Vantagens:
-
-- Menos bugs de “estado inesperado”
-- Fácil de raciocinar em ambientes concorrentes/assíncronos
-- Ótimo para processamento de dados, coleções, pipelines (`map`, `filter`, `reduce`)
-
-Exemplos:
-
-- Haskell, Scheme
-- Traços funcionais em: Java (streams, lambdas), JavaScript, Python, C#, etc.
-
----
-
-### 7.5. Paradigma lógico
-
-- Baseado em **lógica formal**
-- Em vez de comandos, você descreve:
-  - **Fatos**
-  - **Regras**
-- O sistema tenta **inferir** respostas com base nesses fatos e regras.
-
-Exemplo de pergunta (query):
-
-> “Dadas essas regras, é verdade que X é pai de Y?”
-
-Linguagem clássica:
-
-- **Prolog**
-
-Usado em:
-
-- Sistemas especialistas
-- Inteligência artificial clássica
-- Motores de inferência
+- Exemplo clássico:
+  - **Prolog**
+  - Usado em:
+    - Inteligência Artificial
+    - Sistemas especialistas
+    - Bases de conhecimento
 
 ---
 
-### 7.6. Declarativo × Procedural (imperativo)
+## 7. Declarativo x Procedural (imperativo)
 
-- **Declarativo**:
+O professor propõe uma divisão geral:
 
-  - Você diz **o que** quer
-  - O sistema decide **como** chegar lá
-  - Exemplos: SQL, Prolog, partes de linguagens funcionais
+### 7.1 Paradigmas que tendem ao declarativo
 
-- **Procedural/imperativo**:
-  - Você diz **passo a passo** como fazer
-  - Ex.: C, muitos códigos em Java, PHP, etc.
+- Focam em dizer **o que** deve ser verdade ou qual resultado queremos
+- O “como chegar lá” fica a cargo do **sistema**
+- Exemplos:
+  - Funcional
+  - Lógico
+  - (e vários DSLs, linguagens de consulta, etc.)
 
-> **Mapa mental rápido:**
->
-> - **Declarativo** → “Eu quero esse resultado.”
-> - **Imperativo** → “Faça isso, depois isso, depois aquilo…”
+### 7.2 Paradigmas que tendem ao procedural / imperativo
+
+- Focam em dizer **como executar** passo a passo
+- O programador define:
+  - Sequência de comandos
+  - Fluxo de controle
+  - Mudanças de estado
+- Exemplos:
+  - Imperativo
+  - Estruturado
+  - Orientado a Objetos (por baixo, ainda imperativo)
 
 ---
 
-## 8. Operadores, precedência e associatividade
+## 8. Operadores, precedência, associatividade e tipagem
 
-### Precedência
+### 8.1 Precedência de operadores
 
-Define **quem vem primeiro** em uma expressão.
+- Define **a ordem** em que as operações são avaliadas
+- Em aritmética:
+  - `*` e `/` antes de `+` e `-`
+- Em expressões lógicas:
+  - Operadores relacionais (`>`, `<`, `==`) antes de
+  - Operadores lógicos (`&&`, `||`)
+
+### 8.2 Associatividade
+
+Resolve ambiguidades quando operadores têm **mesma precedência**.
 
 Exemplo:
 
@@ -363,168 +337,125 @@ Exemplo:
 5 - 3 + 2
 ```
 
-Sem parênteses, a linguagem segue uma ordem:
-
-- Multiplicação e divisão antes de soma e subtração
-- Em lógicas: relacionais antes de `&&`, `||`, etc.
-
-### Associatividade
-
-Quando operadores têm **mesma precedência**, a associatividade decide a direção:
-
-- Da esquerda para a direita
-  - Comum em `+`, `-`
-- Da direita para a esquerda
-  - Comum em atribuição em algumas linguagens
-
-Exemplo:
+Se a associatividade é da **esquerda para a direita**:
 
 ```txt
-5 - 3 + 2  →  (5 - 3) + 2 = 4
+(5 - 3) + 2 = 4
 ```
 
-> **Boa prática:**  
-> _Na dúvida, use **parênteses**. Código legível > código “esperto”._
+> ✅ Regra prática:  
+> Quando tiver dúvida, use **parênteses** para deixar a intenção explícita.
+
+### 8.3 Ortogonalidade e sobrecarga de operadores
+
+- Ortogonalidade baixa → muitas exceções
+- Exemplo de sobrecarga de operador problemático:
+
+```js
+1 + 1      // 2 (número)
+"1" + "1"  // "11" (string)
+```
+
+Isso pode gerar bugs se você **não souber** com quais tipos está lidando.
+
+### 8.4 Tipagem: forte x fraca
+
+- **Tipagem forte** (ex.: C, Java):
+  - Conversões de tipo geralmente precisam ser **explícitas**
+  - Compilador reclama mais rápido
+- **Tipagem fraca** (ex.: JavaScript, PHP):
+  - A linguagem converte tipos automaticamente em várias situações
+  - Mais flexível, porém mais sujeita a “magias” inesperadas
+
+> 💡 Boa prática:  
+> Sempre validar os dados antes de converter,  
+> e ter cuidado com **perda de informação** (ex.: float → int).
 
 ---
 
-## 9. Tipagem e conversões
+## 9. “Erros clássicos” comentados pelo professor
 
-### Tipagem forte vs fraca
+Alguns riscos conceituais que aparecem muito:
 
-- **Fortemente tipadas** (ex.: Java, C#, C em boa parte):
+1. **Confundir “compilar” com “estar correto”**
+   - “Compilou” ≠ “Está certo”
+   - Compilar só garante:
+     - Sintaxe correta
+     - Tipos (mais ou menos) compatíveis
+   - A lógica pode estar completamente errada
 
-  - Conversões costumam ser **explícitas**
-  - O compilador reclama se algo estiver estranho
+2. **Esquecer parênteses em expressões complexas**
+   - Pode mudar a ordem da avaliação
+   - Resultados numéricos ou lógicos errados
 
-- **Fracamente tipadas** (ex.: JavaScript, PHP):
-  - Fazem muitas conversões **automáticas**
-  - Fáceis para começar, mas perigosas em sistemas grandes
+3. **Confiar demais em operadores sobrecarregados**
+   - Ex.: `+` ser soma ou concatenação
+   - Em tipagem fraca, isso piora
 
-### Riscos comuns
-
-- Perda de precisão (ex.: `3.14` → `3`)
-- Conversão de string inválida para número
-- Comparações ambíguas (`"10" == 10` em JS, por exemplo)
-
-> **Frase‑âncora:**  
-> _“O tipo certo, no lugar certo, evita bug chato e difícil de achar.”_
-
----
-
-## 10. Linguagens multiparadigma
-
-Hoje, a maioria das linguagens populares é **multiparadigma**:
-
-- Java, C#, Python, JavaScript, Kotlin, etc.
-- Suportam:
-  - Estilo imperativo
-  - Estruturado
-  - Orientado a objetos
-  - Traços funcionais (lambdas, streams, map/filter/reduce)
-
-Isso é poderoso, mas:
-
-- **Não** significa que você deve misturar tudo o tempo todo
-- Precisa de **critério** para escolher o estilo adequado a cada problema
+4. **Ignorar escopo e tipagem**
+   - Variável global alterada por engano
+   - Sombra de variáveis (mesmo nome em escopos diferentes)
 
 ---
 
-## 11. Como escolher paradigma/linguagem?
+## 10. Como isso conversa com sua formação de engenheiro de software?
 
-Use este mini-checklist mental:
+A disciplina não é “só teoria chata”:
 
-1. **Problema baseado em regras, fatos, inferência?**
-
-   - Paradigma lógico / declarativo
-
-2. **Muita transformação de dados, pouca dependência de estado?**
-
-   - Paradigma funcional
-
-3. **Domínio rico em entidades do mundo real (pessoas, pedidos, contas, produtos)?**
-
-   - Programação orientada a objetos
-
-4. **Problema exige controle fino de passo a passo e estado?**
-   - Paradigma imperativo / estruturado
-
-> **Regra de ouro:**  
-> _“Especialize-se em uma linguagem, mas **não feche os olhos** para outras formas de pensar.”_
+- Ajuda você a:
+  - Ler códigos em linguagens diferentes sem entrar em pânico
+  - Avaliar tecnologias para um projeto real
+  - Evitar bugs por confusão de sintaxe/semântica
+- Cria base para matérias futuras:
+  - Compiladores
+  - Arquitetura de software
+  - Linguagens específicas (Java, C#, JS, etc.)
 
 ---
 
-## 12. Erros conceituais comuns (para não cair neles)
+## 11. Dicas extra de estudo (neuroaprendizagem)
 
-1. **“Se compilou, tá certo.”**
+Sugestões alinhadas com a fala do professor (tornar o conteúdo menos “denso”):
 
-   - Não! Compilar só garante sintaxe válida.
-   - Erros lógicos/semânticos continuam lá.
+1. **Estude fazendo paralelos com português**
+   - Sintaxe da linguagem ↔ gramática da língua
+   - Semântica ↔ significado da frase
 
-2. **Omitir parênteses em expressões complexas**
+2. **Monte pequenos exemplos próprios**
+   - Ex.: escrever um `if` sintaticamente correto, mas semanticamente errado
+   - Rodar e ver o resultado inesperado
 
-   - Pode mudar o resultado sem você perceber.
+3. **Desenhe mini árvores sintáticas**
+   - Para expressões tipo `x = a + b * c`
+   - Isso ajuda a fixar precedência
 
-3. **Assumir que `+` sempre soma números**
-
-   - Em linguagens com concatenação, pode produzir resultados estranhos.
-
-4. **Ignorar escopo de variáveis**
-
-   - Variáveis globais demais → bugs difíceis de rastrear.
-
-5. **Misturar paradigmas sem critério**
-   - Código vira um Frankenstein difícil de manter.
+4. **Compare paradigmas em um quadro**
+   - Imperativo x OO x Funcional x Lógico
+   - Colunas: foco, estado, estilo mental, exemplos de linguagem
 
 ---
 
-## 13. Resumo relâmpago da aula
+## 12. Para a próxima aula
 
-- Linguagem = vocabulário + sintaxe + semântica + regras de uso
-- Paradigma = **modo de pensar** e organizar soluções
-- Imperativo: foco no **como fazer**
-- Estruturado: organização em **funções e blocos claros**
-- POO: foco em **objetos, atributos e métodos**
-- Funcional: foco em **funções puras e imutabilidade**
-- Lógico: foco em **regras e inferências**
-- Declarativo × Procedural: **o quê** vs **como**
-- BNF: gramática formal → base de compiladores
-- Ortogonalidade: linguagem previsível, com poucas exceções
+Tarefas sugeridas:
 
----
+- Tente:
+  1. Escrever 3 exemplos de **erros de sintaxe**
+  2. Escrever 3 exemplos de **erros de semântica**
+- Em cada exemplo, anotar:
+  - Se o código compila ou não
+  - Por que o resultado está errado (no caso semântico)
 
-## 14. Como revisar essa aula usando memorização ativa
-
-### Passo 1 – Revisão rápida (em 5–10 minutos)
-
-- Leia apenas:
-  - Títulos das seções
-  - Frases‑âncora em destaque
-  - Listas principais
-
-### Passo 2 – Active Recall (sem olhar o material)
-
-Feche o arquivo e tente responder de cabeça:
-
-1. O que é **sintaxe**? O que é **semântica**?
-2. Diferença entre imperativo, POO, funcional e lógico.
-3. O que é **função pura**? O que é **imutabilidade**?
-4. O que é **BNF** e para que serve?
-5. Exemplos de situações onde POO é melhor; outras onde funcional é melhor.
-
-Depois, confira no material onde acertou e onde confundiu.
-
-### Passo 3 – Repetição espaçada
-
-- Dia 1: leia a aula completa
-- Dia 2: faça apenas o **resumo relâmpago**
-- Dia 4: refaça o **Active Recall**
-- Dia 7: explique o conteúdo para alguém (ou em voz alta para você mesmo)
-
-> **Dica final:**  
-> _“Você realmente aprende quando consegue **explicar com suas próprias palavras**.”_
+> 💡 Dica:  
+> Guardar esses exemplos em um repositório ou caderno digital.  
+> Eles viram um “catálogo de bugs clássicos” para revisar antes da prova.
 
 ---
 
-**Fim da Aula 01 – Paradigmas de Linguagens de Programação (Visão Geral)**  
-Use esta aula como **mapa geral**; as próximas mergulham fundo em cada paradigma.
+## Fim da Revisão da Aula 01
+
+Esta página resume a **aula 01** de Paradigmas de Linguagens de Programação, baseada na fala do professor:
+- Conceitos de **vocabulário, sintaxe, semântica, BNF e árvores sintáticas**
+- Visão geral dos principais **paradigmas** (imperativo, estruturado, OO, funcional, lógico)
+- Discussão sobre **precedência, associatividade, tipagem e ortogonalidade**
+- Dicas práticas para **prova** e para a vida real como engenheiro de software.
